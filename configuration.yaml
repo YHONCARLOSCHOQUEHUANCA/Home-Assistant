@@ -1,0 +1,25 @@
+#################################################################
+## Home Assistant Core
+#################################################################
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+#################################################################
+## Components
+#################################################################
+
+#################################################################
+## Notifications
+#################################################################
+
+#################################################################
+## Includes
+#################################################################
+
+automation manual: !include_dir_merge_list automation/
+automation UI: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
