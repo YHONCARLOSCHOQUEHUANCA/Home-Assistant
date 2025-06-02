@@ -4,7 +4,7 @@
 My personal [Home Assistant Container](https://home-assistant.io) configurations.  These are the active automations and configurations that I use every day and are updated frequently as I add more devices and devise increasingly complex methods for performing simple tasks.
 
 # <a name="menu">Menu</a>
- | [Hubs](#hubs) | [Lighting](#lighting) | [Outlets & Switches](#outlets)|  [Voice Assistants](#voice) | [Media](#media) | [Sensors](#sensors) | [Cameras](#cameras) | [Energy](#energy) | [Network](#network) | [Other Hardware](#other) | [Software](#software) |
+ | [Hubs](#hubs) | [Lighting](#lighting) | [Outlets & Switches](#outlets)|  [Voice Assistants](#voice) | [Media](#media) | [Sensors](#sensors) | [Cameras](#cameras) | [Retired](#retired) |
 
 ## <a name="hubs">Hubs</a>
 
@@ -39,7 +39,7 @@ My personal [Home Assistant Container](https://home-assistant.io) configurations
 | [Menu](#menu) 
 
 | Device  | Quantity | Connection | Home Assistant | Notes |
-| :-------------: | :---: | :-------------: | :-------------: | :-------------: |
+| :-------------: | :---: | :-------------: | :-------------: | :-----------------------------------: |
 | [Amazon Echo Dot](https://amzn.to/2wSreSW) | 2 | Wi-Fi | [Home Assistant Cloud](https://www.home-assistant.io/cloud/) | Audio only Voice Assistant. |
 | [Amazon Echo Show 8](https://amzn.to/3sPEh09) | 1 | Wi-Fi | [Home Assistant Cloud](https://www.home-assistant.io/cloud/) |Voice Assistant with display. |
 
